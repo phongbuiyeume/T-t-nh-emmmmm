@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gửi Em 💌</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #f8b6d0, #ff4d4d);
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 48px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    p {
+      font-size: 22px;
+      max-width: 700px;
+      margin: 20px auto;
+      line-height: 1.8;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      animation: fadeIn 4s ease-in-out;
+    }
+
+    button {
+      padding: 12px 24px;
+      margin: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff4d4d;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e60000;
+    }
+
+    .heart-float {
+      position: absolute;
+      color: red;
+      animation: float 5s infinite ease-in-out;
+      font-size: 28px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    audio {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Gửi em, người khiến trái tim anh rung động... 💖</h1>
+  <p>
+    Anh đã ngồi rất lâu để viết những dòng này, vì anh muốn từng câu chữ phải thật chân thành.  
+    Đôi khi, cảm giác yêu một người khiến ta không biết diễn tả thế nào, nhưng trái tim anh lại mách bảo:  
+    **“Hãy viết ra, hãy nói ra những gì em cảm thấy thật sự, để người ấy biết em yêu họ thế nào.”**
+  </p>
+
+  <p>
+    Từ khi gặp em, thế giới của anh đã thay đổi. Em như một ngôi sao sáng trong bóng tối, làm cho mọi thứ quanh anh trở nên tươi đẹp hơn.  
+    Ánh mắt em, nụ cười của em, thậm chí là mỗi lần em nói chuyện cũng khiến anh cảm thấy hạnh phúc.  
+    Anh không còn lo lắng về những điều nhỏ nhặt nữa, chỉ vì một điều duy nhất: Anh muốn được ở cạnh em mãi mãi.
+  </p>
+
+  <p>
+    Anh nhớ ngày đầu tiên gặp em. Lúc đó, tim anh đập mạnh, dù chỉ là một ánh mắt thoáng qua. Em có biết không,  
+    ngay khoảnh khắc đó, anh đã biết rằng em chính là người anh muốn dành cả cuộc đời này để yêu thương.
+  </p>
+
+  <p>
+    Và giờ, anh muốn hỏi em một câu, từ tận đáy lòng mình:  
+    <strong>Em có đồng ý làm người yêu anh không? 🥺❤️</strong>
+  </p>
+
+  <div class="buttons">
+    <button onclick="yes()">Có, em yêu anh rồi 🥰</button>
+    <button onclick="no()">Không, em cần thời gian suy nghĩ 😅</button>
+  </div>
+
+  <p>
+    (Nếu em nói "Có", trái tim anh sẽ bay lên vì hạnh phúc 💖)  
+    (Nếu em nói "Không", anh sẽ kiên nhẫn đợi em. Vì tình yêu không thể vội vã, phải không em? 💪)
+  </p>
+
+  <!-- Nhạc nền (lofi chill ngọt ngào) -->
+  <audio autoplay loop controls>
+    <source src="https://cdn.pixabay.com/download/audio/2022/11/21/audio_c8f7607c68.mp3?filename=love-you-124110.mp3" type="audio/mpeg">
+    Trình duyệt của bạn không hỗ trợ nhạc nền.
+  </audio>
+
+  <script>
+    function yes() {
+      document.body.innerHTML = `
+        <h1>💞 Em đã đồng ý 💞</h1>
+        <p>Trái tim anh như muốn nổ tung vì hạnh phúc 😭❤️<br>
+        Cảm ơn em vì đã cho anh cơ hội được yêu và che chở cho em.</p>
+        <p style="font-size: 18px;">Từ nay, mình cùng nhau viết nên những kỷ niệm thật đẹp nhé 🥰</p>
+        <audio autoplay loop controls>
+          <source src="https://cdn.pixabay.com/download/audio/2022/12/09/audio_57ac3b9c1c.mp3?filename=you-make-me-smile-126735.mp3" type="audio/mpeg">
+        </audio>
+      `;
+    }
+
+    function no() {
+      alert("Không sao đâu... Chỉ cần em hạnh phúc, anh sẽ chờ. Vì tình yêu không phải lúc nào cũng vội vã 🥺");
+    }
+
+    // Tạo hiệu ứng trái tim bay liên tục
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.classList.add("heart-float");
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.top = window.innerHeight + "px";
+      heart.innerHTML = "❤️";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 300);
+  </script>
+
+</body>
+</html>
